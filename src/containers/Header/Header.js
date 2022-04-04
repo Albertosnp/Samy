@@ -1,18 +1,20 @@
-import Language from "../Language/Language";
+import { Link } from 'react-router-dom';
+import HeaderStyled from './Header.style';
 
-export default function Header() {
+export default function Menu() {
   return (
-    <header className="App-header">
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
+    <HeaderStyled>
+      <Link to="/">Home</Link>
+      <input type="text" />
 
-      <Language />
-    </header>
+      {/* <ul>
+        <li>
+          <Link to={`/`}>Home</Link>
+        </li>
+        <li>
+          <Link to={`/about`}>About</Link>
+        </li>
+      </ul> */}
+    </HeaderStyled>
   );
 }

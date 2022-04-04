@@ -1,17 +1,16 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-import Layout from './Layout';
+import Layout from './Layout/Layout';
 
 const Home = lazy(() => import('./views/Home/Home'));
-const About = lazy(() => import('./views/About/About'));
+const Detail = lazy(() => import('./views/Detail/Detail'));
 const NotFound = lazy(() => import('./views/NotFound/NotFound'));
 
 export default function AllRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        {/* <Route index element={<Navigate to="/es" />} /> */}
         <Route
           index
           // path={`${base}`}
@@ -22,10 +21,10 @@ export default function AllRoutes() {
           }
         />
         <Route
-          path={`/about`}
+          path={`/detail`}
           element={
             <Suspense fallback={<>...</>}>
-              <About />
+              <Detail />
             </Suspense>
           }
         />
