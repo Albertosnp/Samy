@@ -2,7 +2,8 @@
 export const $fontSizebase = 16;
 
 //Colores
-export const $primary = '#C13584';
+export const $primary = '#e5e5e5';
+export const $secondary = '#ffffff';
 
 export const $success = '#44D799';
 export const $caution = '#F7A507';
