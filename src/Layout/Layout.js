@@ -7,8 +7,6 @@ function Layout() {
   return (
     <LayoutStyled>
       <Header />
-      <hr />
-      
       <Outlet />
     </LayoutStyled>
   );
