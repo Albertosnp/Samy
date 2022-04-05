@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { $primary, $secondary } from 'styles/_variables';
+import { $primary, $secondary, $success } from 'styles/_variables';
 
 const CardStyled = styled.article`
   display: inline-block;
@@ -9,7 +9,8 @@ const CardStyled = styled.article`
   height: 455px;
   width: 400px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-
+  
+  
   position: relative;
   .card {
     &__image {
@@ -21,9 +22,10 @@ const CardStyled = styled.article`
 
     &__price {
       position: absolute;
-      top: 20px;
+      top: 15px;
       left: 15px;
       font-weight: bold;
+      font-size: 1.3em;
     }
 
     &__titleBlock {
@@ -34,15 +36,14 @@ const CardStyled = styled.article`
       align-items: center;
 
       &__title {
-        font-size: 1.5em;
+        font-size: 1.6em;
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 5px;
       }
 
       &__author {
-        font-size: 0.8em;
-        font-style: italic;
+        font-family: 'DroidSerif';
       }
     }
 
@@ -77,12 +78,13 @@ const CardStyled = styled.article`
         &:hover {
           background-color: ${$secondary};
         }
+      
+        &--liked {
+          background-color: ${$success};
+        }
+      
       }
     }
-  }
-
-  :hover {
-    filter: grayscale(0.7);
   }
 `;
 

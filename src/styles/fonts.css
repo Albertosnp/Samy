@@ -1,25 +1,19 @@
-/* @font-face {
-  font-family: 'proxima_nova_regular';
-  src: url('./fonts/proxima_nova_regular-webfont.eot');
-  src: url('./fonts/proxima_nova_regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/proxima_nova_regular-webfont.woff2') format('woff2'),
-    url('./fonts/proxima_nova_regular-webfont.woff') format('woff'),
-    url('./fonts/proxima_nova_regular-webfont.svg#proxima_novaregular') format('svg');
+ @font-face {
+  font-family: 'DroidSerif';
+  src: url('./fonts/DroidSerif-Regular.ttf');
+
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'proxima_nova_regular';
-  src: url('./fonts/proxima_nova_bold-webfont.eot');
-  src: url('./fonts/proxima_nova_bold-webfont.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/proxima_nova_bold-webfont.woff2') format('woff2'),
-    url('./fonts/proxima_nova_bold-webfont.woff') format('woff'),
-    url('./fonts/proxima_nova_bold-webfont.svg#proxima_novabold') format('svg');
+  font-family: 'Neutraface';
+  src: url('./fonts/Neutraface\ Text\ Bold.otf');
+  
   font-weight: bold;
   font-style: normal;
 }
-
+/*
 @font-face {
   font-family: 'proxima_nova_regular';
   src: url('./fonts/proxima_nova_regular_italic-webfont.eot');

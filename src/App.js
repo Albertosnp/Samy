@@ -1,4 +1,5 @@
 import './styles/reset.css';
+import './styles/fonts.css';
 import './App.css'
 
 import Routes from 'Routes';

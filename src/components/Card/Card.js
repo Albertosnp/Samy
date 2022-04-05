@@ -1,5 +1,6 @@
+import classNames from 'classnames';
 import { GrDislike, GrLike } from 'react-icons/gr';
-import CardStyled from './Card.style';
+import CardStyled from './Card.styled';
 
 export const Card = ({ product, handleLike }) => {
   const { author, price, liked, likes_count, main_attachment, title } = product;
@@ -7,6 +8,13 @@ export const Card = ({ product, handleLike }) => {
   const handleClick = () => {
     handleLike && handleLike({ id: product.id });
   };
+
+  const classLikeButon = classNames({
+    'card__likes__button': true,
+    'card__likes__button--liked': liked,
+    });
+  
+  const Icon = liked ? GrLike : GrDislike;
 
   return (
     <CardStyled className="card">
@@ -17,8 +25,8 @@ export const Card = ({ product, handleLike }) => {
         <p className="card__titleBlock__author">by {author}</p>
       </div>
       <div className="card__likes">
-        <button className="card__likes__button" onClick={handleClick}>
-          {liked ? <GrDislike /> : <GrLike />}
+        <button className={classLikeButon} onClick={handleClick}>
+          <Icon/>
         </button>
         <span className="card__likes__count">{likes_count}</span>
       </div>

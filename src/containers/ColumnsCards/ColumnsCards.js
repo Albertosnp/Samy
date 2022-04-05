@@ -1,7 +1,7 @@
 import { Card } from 'components/Card/Card';
 import { useDispatch } from 'react-redux';
 import { setLikeProduct } from 'redux/actions';
-import ColumnsCardsStyled from './ColumnsCards.style';
+import ColumnsCardsStyled from './ColumnsCards.styled';
 
 export default function ColumnsCards({ products }) {
   const dispatch = useDispatch();
