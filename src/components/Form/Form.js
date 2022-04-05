@@ -2,7 +2,7 @@ import FormStyled from './Form.styled';
 
 export const Form = ({ handleSubmit, handleChange, product }) => {
   return (
-    <FormStyled onSubmit={handleSubmit} className="form">
+    <FormStyled onSubmit={handleSubmit} className="form" data-cy='header-form'>
       <div className="form__wrapper">
         <img
           className="form__wrapper__icon"
