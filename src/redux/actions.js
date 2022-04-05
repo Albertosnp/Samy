@@ -1,1 +1,5 @@
-export { setProductSearched } from './modules/products/action';
+export {
+  setProductSearched,
+  setAllProducts,
+  setLikeProduct,
+} from './modules/products/action';

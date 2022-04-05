@@ -2,8 +2,8 @@ import ColumnsCards from 'containers/ColumnsCards/ColumnsCards';
 import { useFilterProducts } from 'hooks/useFilterProducts';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAllProducts } from 'redux/modules/products/action';
-import { getAllProducts } from 'services/getAllProducts';
+import { setAllProducts } from 'redux/actions';
+import { getAllProducts } from 'services/getAllProducts.service';
 
 function Home() {
   const dispatch = useDispatch();
