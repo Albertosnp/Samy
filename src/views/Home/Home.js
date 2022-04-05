@@ -1,3 +1,4 @@
+import ColumnsCards from 'containers/ColumnsCards/ColumnsCards';
 import { useEffect, useState } from 'react';
 import { getAllProducts } from 'services/getAllProducts';
 
@@ -10,8 +11,7 @@ function Home() {
 
   return (
     <div className="Home">
-      <p>Home</p>
-      
+      <ColumnsCards products={allProducts} />
     </div>
   );
 }
