@@ -21,7 +21,7 @@ const CardStyled = styled.article`
 
     &__price {
       position: absolute;
-      top: 12px;
+      top: 20px;
       left: 15px;
       font-weight: bold;
     }

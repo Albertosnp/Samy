@@ -12,8 +12,6 @@ export default function Header() {
     e.preventDefault();
 
     const searched = product.trim();
-    if (searched.length <= 0) return;
-
     dispatch(setProductSearched(searched));
   };
 

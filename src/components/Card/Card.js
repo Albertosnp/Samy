@@ -1,7 +1,7 @@
 import CardStyled from "./Card.style";
 
 export const Card = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   const { author, price, liked, likes_count, main_attachment, title } = product;
   return (
     <CardStyled className="card">
