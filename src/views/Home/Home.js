@@ -8,18 +8,15 @@ import { getAllProducts } from 'services/getAllProducts.service';
 function Home() {
   const dispatch = useDispatch();
   const wordSearched = useSelector((state) => state.products.product);
-  const { productsToShow, isMatch } = useFilterProducts({ wordSearched }); 
+  const { productsToShow, isMatch } = useFilterProducts({ wordSearched });
 
   useEffect(() => {
     getAllProducts().then((products) => dispatch(setAllProducts(products)));
   }, [dispatch]);
 
-
   return (
-    <div className="Home">
-      <ColumnsCards
-        products={productsToShow}
-      />
+    <div className="Home" data-cy="Home">
+      {productsToShow.length > 0 && <ColumnsCards products={productsToShow} />}
     </div>
   );
 }
