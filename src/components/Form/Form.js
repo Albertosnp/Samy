@@ -1,4 +1,4 @@
-import FormStyled from './Form.style';
+import FormStyled from './Form.styled';
 
 export const Form = ({ handleSubmit, handleChange, product }) => {
   return (

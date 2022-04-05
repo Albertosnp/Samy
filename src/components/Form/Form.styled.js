@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { $primary } from 'styles/_variables';
+import { $font_primary, $primary } from 'styles/_variables';
 
 const FormStyled = styled.form`
   .form {
@@ -14,9 +14,11 @@ const FormStyled = styled.form`
         width: 100%;
         min-width: 268px;
         height: 30px;
-        border-radius: 0.5em;
+        border-radius: 1em;
         background-color: ${$primary};
         padding: 2px 23px 2px 30px;
+        font-family: ${$font_primary};
+        font-size: 1em;
       }
 
       &__input:focus {

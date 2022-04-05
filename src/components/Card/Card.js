@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { GrDislike, GrLike } from 'react-icons/gr';
-import CardStyled from './Card.style';
+import CardStyled from './Card.styled';
 
 export const Card = ({ product, handleLike }) => {
   const { author, price, liked, likes_count, main_attachment, title } = product;

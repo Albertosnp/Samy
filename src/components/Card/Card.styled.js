@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { $primary, $secondary } from 'styles/_variables';
+import { $primary, $secondary, $success } from 'styles/_variables';
 
 const CardStyled = styled.article`
   display: inline-block;
@@ -9,7 +9,7 @@ const CardStyled = styled.article`
   height: 455px;
   width: 400px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  font-family: 'Neutraface';
+  
   
   position: relative;
   .card {
@@ -80,7 +80,7 @@ const CardStyled = styled.article`
         }
       
         &--liked {
-          background-color: #83f3c6;
+          background-color: ${$success};
         }
       
       }

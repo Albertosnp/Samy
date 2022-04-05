@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setProductSearched } from 'redux/actions';
 import logo from 'assets/img/logo.jpg';
-import HeaderStyled from './Header.style';
+import HeaderStyled from './Header.styled';
 import { Form } from 'components/Form/Form';
 
 export default function Header() {
