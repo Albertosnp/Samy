@@ -12,6 +12,7 @@ export const Card = ({ product }) => {
         <p className="card__titleBlock__author">by {author}</p>
       </div>
       <div className="card__likes">
+        <button className="card__likes__button">Like</button>
         <span className="card__likes__count">{likes_count}</span>
       </div>
     </CardStyled>

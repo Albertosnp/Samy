@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { setProductSearched } from 'redux/actions';
+import logo from 'assets/img/logo.jpg';
 import HeaderStyled from './Header.style';
 
 export default function Header() {
@@ -23,7 +23,11 @@ export default function Header() {
 
   return (
     <HeaderStyled className="header">
-      <Link to="/">Home</Link>
+      <img
+        className="header__logo"
+        src={logo}
+        alt="logo"
+      />
       <form onSubmit={handleSubmit} className="header__form">
         <div className="header__form__wrapper">
           <img
