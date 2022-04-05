@@ -9,9 +9,10 @@ export const Card = ({ product, handleLike }) => {
     handleLike && handleLike({ id: product.id });
   };
 
-  const classLikeButon = classNames({
+  const classLikeButton = classNames({
     'card__likes__button': true,
     'card__likes__button--liked': liked,
+    'card__likes__button--unliked': !liked,
     });
   
   const Icon = liked ? GrLike : GrDislike;
@@ -25,7 +26,7 @@ export const Card = ({ product, handleLike }) => {
         <p className="card__titleBlock__author">by {author}</p>
       </div>
       <div className="card__likes">
-        <button className={classLikeButon} onClick={handleClick}>
+        <button className={classLikeButton} onClick={handleClick} type="button">
           <Icon/>
         </button>
         <span className="card__likes__count">{likes_count}</span>

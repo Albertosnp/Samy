@@ -1,8 +1,13 @@
 ///<reference types="Cypress" />
 
 describe('Search data in page', () => {
-  it('Should appears differents cards it depends of type in', () => {
+  beforeEach(() => {
     cy.visit(Cypress.env('baseUrl'));
+  });
+
+
+  it('Should appears differents cards it depends of type in', () => {
+
     cy.get('[data-cy="header-form"] .form__wrapper__input')
       .type('Grey beach')
       .should('have.value', 'Grey beach')
@@ -24,7 +29,7 @@ describe('Search data in page', () => {
   });
 
   it('Should´nt appears anything at Home view', () => {
-    cy.visit(Cypress.env('baseUrl'));
+
     cy.get('[data-cy="header-form"] .form__wrapper__input')
       .type('NJKANSDKJNASKJDN')
       .type('{enter}');
