@@ -21,7 +21,7 @@ const CardStyled = styled.article`
 
     &__price {
       position: absolute;
-      top: 12px;
+      top: 20px;
       left: 15px;
       font-weight: bold;
     }
@@ -48,20 +48,16 @@ const CardStyled = styled.article`
 
     &__likes {
       position: absolute;
-      top: 0px;
+      top: 20px;
       right: 15px;
 
       font-size: 1.2rem;
       font-weight: bold;
-      color: ${$secondary};
 
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
-      opacity: 0;
-      transition: all 1s ease-in-out;
 
       &__button {
         cursor: pointer;
@@ -73,6 +69,10 @@ const CardStyled = styled.article`
         margin-bottom: 5px;
 
         background-color: ${$primary};
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
 
         &:hover {
           background-color: ${$secondary};
@@ -83,11 +83,6 @@ const CardStyled = styled.article`
 
   :hover {
     filter: grayscale(0.7);
-
-    .card__likes {
-      opacity: 1;
-      top: 35px;
-    }
   }
 `;
 
