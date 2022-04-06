@@ -7,17 +7,17 @@ import { Form } from 'components/Form/Form';
 
 export default function Header() {
   const dispatch = useDispatch();
-  const [product, setProduct] = useState('');
+  const [wordSearched, setWordSearched] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const searched = product.trim();
+    const searched = wordSearched.trim();
     dispatch(setProductSearched(searched));
   };
 
   const handleChange = ({ target }) => {
-    setProduct(target.value);
+    setWordSearched(target.value);
   };
 
   return (
@@ -27,7 +27,7 @@ export default function Header() {
         src={logo}
         alt="logo"
       />
-      <Form handleSubmit={handleSubmit} handleChange={handleChange} product={product} />
+      <Form handleSubmit={handleSubmit} handleChange={handleChange} wordSearched={wordSearched} />
     </HeaderStyled>
   );
 }

@@ -7,11 +7,17 @@ import { getAllProducts } from 'services/getAllProducts.service';
 
 function Home() {
   const dispatch = useDispatch();
+  const allProducts = useSelector((state) => state.products.allProducts);
   const wordSearched = useSelector((state) => state.products.product);
-  const { productsToShow, isMatch } = useFilterProducts({ wordSearched });
+  const { productsToShow, isMatch } = useFilterProducts({
+    wordSearched,
+    allProducts,
+  });
 
   useEffect(() => {
-    getAllProducts().then((products) => dispatch(setAllProducts(products)));
+    getAllProducts()
+      .then((products) => dispatch(setAllProducts(products)))
+      .catch((err) => console.log(err));
   }, [dispatch]);
 
   return (
