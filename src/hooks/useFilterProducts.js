@@ -1,9 +1,7 @@
-const { useState, useEffect } = require("react");
-const { useSelector } = require("react-redux");
+import { filterProducts } from 'utils/filterProducts';
+const { useState, useEffect } = require('react');
 
-
-export const useFilterProducts = ({ wordSearched }) => {
-  const allProducts = useSelector((state) => state.products.allProducts);
+export const useFilterProducts = ({ wordSearched, allProducts }) => {
   const [productsToShow, setProductsToShow] = useState([]);
   const [isMatch, setIsMatch] = useState(false);
 
@@ -13,18 +11,15 @@ export const useFilterProducts = ({ wordSearched }) => {
       setIsMatch(false);
       setProductsToShow(allProducts);
       return;
-    };
+    }
 
-    const productsFiltered = allProducts.filter((product) => {
-      return product.title.toUpperCase().includes(wordSearched.toUpperCase());
-    });
+    const productsFiltered = filterProducts({ allProducts, wordSearched });
 
     if (productsFiltered.length === 0) setIsMatch(false);
     else setIsMatch(true);
 
     setProductsToShow(productsFiltered);
-
   }, [wordSearched, allProducts]);
 
   return { productsToShow, isMatch };
-}
+};
