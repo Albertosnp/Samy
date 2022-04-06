@@ -5,10 +5,11 @@ import logo from 'assets/img/logo.jpg';
 import HeaderStyled from './Header.styled';
 import { Form } from 'components/Form/Form';
 
+let timeout;
 export default function Header() {
   const dispatch = useDispatch();
   const [wordSearched, setWordSearched] = useState('');
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -17,7 +18,14 @@ export default function Header() {
   };
 
   const handleChange = ({ target }) => {
-    setWordSearched(target.value);
+    if (timeout) clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+
+      const searched = target.value.trim();
+      setWordSearched(target.value);
+      dispatch(setProductSearched(searched));
+    }, 1000);
   };
 
   return (
