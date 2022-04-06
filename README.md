@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# SAMY
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Prueba tecnica para Samy 
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+## Para levantar el proyecto
 ### `npm start`
 
-Runs the app in the development mode.\
+Para levantar la aplicacion
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
+## Para ejecutar los test unitarios
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Se han incluido test de los siguientes componentes:
 
-### `npm run build`
+- Card 
+  - Se comprueba que el componente se rederice
+  - Se comprueba que se renderice con los parametros pasados
+  - Se comprueba que el boton de like y unlike funciona
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Form
+  - Se comprueba que el componente se rederice
+  - Se comprueba que el el evento handleChange registra que se ha llamado cuando se introduce un string en el input
+  - Se comprueba que el el evento handleSubmit registra una llamada cuando hacemos "enter"
+  - Se comprueba que el valor del input es igual al introducido
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+También hay un test para la funcion `filterProducts({ allProducts: [], wordSearched: '' })`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Se comprueba que:
+  - Retorne un array vacio cuando le pasamos como parametro `wordSearched` un string vacío.
+  - Retorne un producto cuando le pasamos como parametro `wordSearched: 'Grey'`
+  - Retorne un array vacio cuando el tipo de `allProducts` no es un array
+  - Retorne un array vacio cuando 1el tipo de `wordSearched` no es un string
 
-### `npm run eject`
+## Para ejecutar los test E2E
+### `npm run cypress:open`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Se han incluido los siguientes test con Cypress:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- render 
+  - Para simular la visualizacion correctamente
+- likeAction
+  - Para simular la accion de like y unlike de un producto
+- search 
+  - Para evaluar que hay productos cuando introducimos un titulo existente 
+  - Para evaluar que no hay productos cuando introducimos un titulo no existente
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
