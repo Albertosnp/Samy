@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import FormStyled from './Form.styled';
 
-export const Form = ({ handleSubmit, handleChange, product }) => {
+export const Form = ({ handleSubmit, handleChange, wordSearched }) => {
   return (
     <FormStyled onSubmit={handleSubmit} className="form" data-cy='header-form'>
       <div className="form__wrapper">
@@ -13,10 +14,16 @@ export const Form = ({ handleSubmit, handleChange, product }) => {
           className="form__wrapper__input"
           placeholder="You´re looking for something?"
           type="text"
-          value={product}
+          value={wordSearched}
           onChange={handleChange}
         />
       </div>
     </FormStyled>
   );
+};
+
+Form.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  wordSearched: PropTypes.string.isRequired,
 };

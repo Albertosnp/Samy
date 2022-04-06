@@ -26,7 +26,6 @@ Se han incluido test de los siguientes componentes:
   - Se comprueba que el componente se rederice
   - Se comprueba que el el evento handleChange registra que se ha llamado cuando se introduce un string en el input
   - Se comprueba que el el evento handleSubmit registra una llamada cuando hacemos "enter"
-  - Se comprueba que el valor del input es igual al introducido
 
 También hay un test para la funcion `filterProducts({ allProducts: [], wordSearched: '' })`
 

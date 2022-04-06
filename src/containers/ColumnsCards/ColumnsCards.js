@@ -1,4 +1,5 @@
 import { Card } from 'components/Card/Card';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { setLikeProduct } from 'redux/actions';
 import ColumnsCardsStyled from './ColumnsCards.styled';
@@ -18,3 +19,7 @@ export default function ColumnsCards({ products }) {
     </ColumnsCardsStyled>
   );
 }
+
+ColumnsCards.propTypes = {
+  products: PropTypes.array.isRequired,
+};

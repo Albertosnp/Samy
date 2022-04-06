@@ -9,7 +9,7 @@ function Home() {
   const dispatch = useDispatch();
   const allProducts = useSelector((state) => state.products.allProducts);
   const wordSearched = useSelector((state) => state.products.product);
-  const { productsToShow, isMatch } = useFilterProducts({
+  const { productsToShow } = useFilterProducts({
     wordSearched,
     allProducts,
   });

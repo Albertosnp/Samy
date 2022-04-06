@@ -18,12 +18,11 @@ export default function Header() {
   };
 
   const handleChange = ({ target }) => {
+    setWordSearched(target.value);
     if (timeout) clearTimeout(timeout);
 
     timeout = setTimeout(() => {
-
       const searched = target.value.trim();
-      setWordSearched(target.value);
       dispatch(setProductSearched(searched));
     }, 1000);
   };

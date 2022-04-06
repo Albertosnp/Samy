@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Form } from './Form';
 
 describe('<Form /> tests', () => {
@@ -18,7 +19,7 @@ describe('<Form /> tests', () => {
     screen.getByPlaceholderText('You´re looking for something?');
   });
 
-  it('sholud have value when type in input', () => {
+  it('should have been called functions when type in input', () => {
     const handleSubmit = jest.fn();
     const handleChange = jest.fn();
 
@@ -31,13 +32,11 @@ describe('<Form /> tests', () => {
     );
 
     const input = utils.getByPlaceholderText('You´re looking for something?');
-    fireEvent.change(input, { target: { value: 'something' } });
-
+    userEvent.type(input, 'something');
     expect(handleChange).toHaveBeenCalled();
     
     fireEvent.submit(input);
     expect(handleSubmit).toHaveBeenCalled();
 
-    expect(input.value).toBe('something');
   });
 });

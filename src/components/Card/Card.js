@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { GrDislike, GrLike } from 'react-icons/gr';
 import CardStyled from './Card.styled';
@@ -33,4 +34,17 @@ export const Card = ({ product, handleLike }) => {
       </div>
     </CardStyled>
   );
+};
+
+Card.propTypes = {
+  product: PropTypes.shape({ 
+    author: PropTypes.string, 
+    price: PropTypes.number, 
+    liked: PropTypes.bool, 
+    likes_count: PropTypes.number, 
+    main_attachment: PropTypes.shape({
+      small: PropTypes.string,
+    }), 
+    title: PropTypes.string }).isRequired,
+  handleLike: PropTypes.func,
 };
