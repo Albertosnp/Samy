@@ -14,6 +14,7 @@ describe('Simulate like and unlike of Card', () => {
     cy.get('[data-cy="Home"] .card .card__likes__button').as('likeButton');
 
     cy.get('@likeButton')
+      .first()
       .should('have.class', 'card__likes__button--unliked')
       .click();
 
