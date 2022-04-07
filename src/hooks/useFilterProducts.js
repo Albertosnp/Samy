@@ -1,4 +1,6 @@
-import { filterProducts } from 'utils/filterProducts';
+import { deleteDuplicateItemsInArray } from 'utils/deleteDuplicate';
+import { filterProductsPerAuthor } from 'utils/filterProductsPerAuthor';
+import { filterProductsPerTitle } from 'utils/filterProductsPerTitle';
 const { useState, useEffect } = require('react');
 
 export const useFilterProducts = ({ wordSearched, allProducts }) => {
@@ -13,7 +15,10 @@ export const useFilterProducts = ({ wordSearched, allProducts }) => {
       return;
     }
 
-    const productsFiltered = filterProducts({ allProducts, wordSearched });
+    const productsFilteredPerTitle = filterProductsPerTitle({ allProducts, wordSearched });
+    const productsFilteredPerAuthor = filterProductsPerAuthor({ allProducts, wordSearched });
+    const productsFiltered = deleteDuplicateItemsInArray([...productsFilteredPerTitle, ...productsFilteredPerAuthor]);
+
 
     if (productsFiltered.length === 0) setIsMatch(false);
     else setIsMatch(true);

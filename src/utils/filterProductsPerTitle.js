@@ -1,4 +1,4 @@
-export const filterProducts = ({ allProducts = [], wordSearched = '' }) => {
+export const filterProductsPerTitle = ({ allProducts = [], wordSearched = '' }) => {
   if (!Array.isArray(allProducts)) return [];
   if (typeof wordSearched !== 'string') return [];
 

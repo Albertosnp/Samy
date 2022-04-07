@@ -27,13 +27,22 @@ Se han incluido test de los siguientes componentes:
   - Se comprueba que el el evento handleChange registra que se ha llamado cuando se introduce un string en el input
   - Se comprueba que el el evento handleSubmit registra una llamada cuando hacemos "enter"
 
-También hay un test para la funcion `filterProducts({ allProducts: [], wordSearched: '' })`
+Se ha incluido un test para la función `filterProductsPerTitle({ allProducts: [], wordSearched: '' })`
 
 - Se comprueba que:
   - Retorne un array vacio cuando le pasamos como parametro `wordSearched` un string vacío.
   - Retorne un producto cuando le pasamos como parametro `wordSearched: 'Grey'`
   - Retorne un array vacio cuando el tipo de `allProducts` no es un array
   - Retorne un array vacio cuando 1el tipo de `wordSearched` no es un string
+
+Se ha incluido un test para la función `deleteDuplicateItemsInArray([])`
+
+- Se comprueba que:
+  - Retorne un array vacío cuando se pasa un string vacío
+  - Elimine elementos duplicados de un array simple
+  - Elimine los elementos duplicados en el array de objetos
+  - No elimine un elemento cuando solo cambia una propiedad
+
 
 ## Para ejecutar los test E2E
 ### `npm run cypress:open`

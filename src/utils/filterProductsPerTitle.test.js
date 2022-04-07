@@ -1,4 +1,4 @@
-const { filterProducts } = require('./filterProducts');
+const { filterProductsPerTitle } = require('./filterProductsPerTitle');
 
 describe('Test to filterProducts function', () => {
   const allProducts = [
@@ -135,13 +135,13 @@ describe('Test to filterProducts function', () => {
   ];
 
   it('Should return empty array when pass empty string', () => {
-    const products = filterProducts({ allProducts: [], wordSearched: '' });
+    const products = filterProductsPerTitle({ allProducts: [], wordSearched: '' });
 
     expect(products).toEqual([]);
   });
 
   it('Should return one product when typing Grey"', () => {
-    const products = filterProducts({ allProducts, wordSearched: 'Grey' });
+    const products = filterProductsPerTitle({ allProducts, wordSearched: 'Grey' });
 
     expect(products).toEqual([
       {
@@ -174,7 +174,7 @@ describe('Test to filterProducts function', () => {
   });
 
   it('Should return an empty array when allproducts it´s not an array', () => {
-    const products = filterProducts({
+    const products = filterProductsPerTitle({
       allProducts: '',
       wordSearched: 'Grey',
     });
@@ -183,7 +183,7 @@ describe('Test to filterProducts function', () => {
   });
 
   it('Should return an empty array when wordSearched it´s not an string', () => {
-    const products = filterProducts({
+    const products = filterProductsPerTitle({
       allProducts: allProducts,
       wordSearched: false,
     });
