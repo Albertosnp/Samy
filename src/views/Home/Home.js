@@ -1,5 +1,7 @@
+import { Pagination } from 'components/Pagination/Pagination';
 import ColumnsCards from 'containers/ColumnsCards/ColumnsCards';
 import { useFilterProducts } from 'hooks/useFilterProducts';
+import { usePagination } from 'hooks/usePagination';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAllProducts } from 'redux/actions';
@@ -13,6 +15,7 @@ function Home() {
     wordSearched,
     allProducts,
   });
+  const { page, setPageTo, totalPages, productsToShowPaginated } = usePagination({ productsToShow });
 
   useEffect(() => {
     getAllProducts()
@@ -20,9 +23,12 @@ function Home() {
       .catch((err) => console.log(err));
   }, [dispatch]);
 
+  console.log(productsToShowPaginated);
+
   return (
     <div className="Home" data-cy="Home">
-      {productsToShow.length > 0 && <ColumnsCards products={productsToShow} />}
+      {productsToShowPaginated.length > 0 && <ColumnsCards products={productsToShowPaginated} />}
+      <Pagination page={page} setPageTo={setPageTo} totalPages={totalPages} />
     </div>
   );
 }
